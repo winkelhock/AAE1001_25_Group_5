@@ -1,24 +1,14 @@
 <p align="center">
 
-  <h3 align="center">PolyU AAE1001 GitHub Project (Five Egg and Toast)</h3>
+  <h3 align="center">PolyU AAE1001 GitHub Project Group 5 (Five Egg and Toast)</h3>
 
-  <p align="center">
-    <br />
-    <a href="AAE1001 - Teaching plan 2023-34 sem.pdf"><strong>Teaching Plan</strong></a>
-    <br />
-  </p>
-</p>
-
-*Project Objective: To provide students with opportunities to develop creativity, problem-solving skills and team-work abilities through a group project. During this project, students will get not only the valuable practical experience to use computer programming language to design and develop a path planning algorithm for an aircraft operation from scratch but also practical skills of using online collaborating programming platform to work with group members remotely.*
-
-**Note that the project task is updated, please refer to the latest slide in (Lecture Notes/Slides by Weeks/Week 9 (Second Week)/Second Week - Project tasks (updated).pdf)**
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li>
-      <a href="#lecture-materials">Lecture Materials</a>
+      <a href="#group-members-and-roles">Group Members and Roles</a>
     </li>
     <li>
       <a href="#contact">Contact</a>
@@ -34,13 +24,16 @@
 
 
 
-<!-- Lecture Materials -->
-## Lecture Materials
-<a href="Lecture%20Notes/"><strong>Lecture Notes</strong></a>
-
-<a href="Lecture%20Videos/"><strong>Lecture Videos</strong></a>
-
-<a href="Sample%20Codes/"><strong>Sample Codes</strong></a>
+<!-- Group Members and Roles -->
+## Group Members and Roles
+1. Winkelhock, Yau Yue Hong Winkelhock (25034703D)
+2. Rodgers, Rodgers Mawalla Maighacho (2509499D)
+3. Manny, So Yee Man (25079801D)
+4. August, Wang Tiancheng (25095793D)
+5. Talia, Cheung Yung Ting Talka (25129573D)
+6. Sharon, Chan Chin Ying (25084065D)
+7. Sylvia, Lau Tsz Wing (25068927D)
+</a>
 
 <!-- Student Tasks -->
 ## Student Tasks (will be updated later)
