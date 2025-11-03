@@ -39,7 +39,6 @@
 ## Tasks
 ### Task 1
 
-<a href="Task 1 - Group 5"><strong>Assigned Path for our group</strong></a>
 <a href="task1.py"><strong>Task 1 Code</strong></a>
 
 ### Task 2
