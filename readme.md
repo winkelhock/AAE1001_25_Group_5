@@ -11,13 +11,13 @@
       <a href="#group-members-and-roles">Group Members and Roles</a>
     </li>
     <li>
-      <a href="#contact">Contact</a>
+      <a href="#tasks">Tasks</a>
     </li>
     <li>
-      <a href="#student-tasks">Student Tasks</a>
+      <a href="#presentation">Presentation Files</a>
     </li>
     <li>
-      <a href="#acknowledgements">Acknowledgements</a>
+      <a href="#report">Report</a>
     </li>    
   </ol>
 </details>
@@ -35,7 +35,7 @@
 7. Sylvia, Lau Tsz Wing (25068927D)
 </a>
 
-
+<!-- Tasks -->
 ## Tasks
 ### Task 1
 
@@ -48,7 +48,9 @@
 
 ### Task 3
 
-### PowerPoint
+<!-- Presentation -->
+## Presentation
 
-### Report
+<!-- Report -->
+## Report
 
