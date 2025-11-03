@@ -47,6 +47,8 @@
 
 ### Task 3
 
+<a href="task3.py"><strong>Task 3 Code</strong></a>
+
 <!-- Presentation -->
 ## Presentation
 
