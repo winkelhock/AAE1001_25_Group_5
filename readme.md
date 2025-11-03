@@ -30,7 +30,7 @@
 2. Rodgers, Rodgers Mawalla Maighacho (2509499D)
 3. Manny, So Yee Man (25079801D)
 4. August, Wang Tiancheng (25095793D)
-5. Talia, Cheung Yung Ting Talka (25129573D)
+5. Talia, Cheung Yung Ting Talia (25129573D)
 6. Sharon, Chan Chin Ying (25084065D)
 7. Sylvia, Lau Tsz Wing (25068927D)
 </a>
