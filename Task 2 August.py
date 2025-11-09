@@ -1,22 +1,8 @@
-"""
-
-A* grid planning
-
-author: Atsushi Sakai(@Atsushi_twi)
-        Nikos Kanargias (nkana@tee.gr)
-
-See Wikipedia article (https://en.wikipedia.org/wiki/A*_search_algorithm)
-
-This is the simple code for path planning class
-
-"""
-
-
 
 import math
 
 import matplotlib.pyplot as plt 
-show_animation = True
+show_animation = True 
 
 scenario = {
     "total_passengers": 3300,    
@@ -33,22 +19,14 @@ aircraft_params = {
 class AStarPlanner:
 
     def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y, js_x, js_y):
-        """
-        Initialize grid map for a star planning
-
-        ox: x position list of Obstacles [m]
-        oy: y position list of Obstacles [m]
-        resolution: grid resolution [m]
-        rr: robot radius[m]
-        """
-
-        self.resolution = resolution # get resolution of the grid
-        self.rr = rr # robot radis
+       
+        self.resolution = resolution 
+        self.rr = rr 
         self.min_x, self.min_y = 0, 0
         self.max_x, self.max_y = 0, 0
         self.obstacle_map = None
         self.x_width, self.y_width = 0, 0
-        self.motion = self.get_motion_model() # motion model for grid search expansion
+        self.motion = self.get_motion_model() 
         self.calc_obstacle_map(ox, oy)
 
         self.fc_x = fc_x
