@@ -1,0 +1,460 @@
+import math
+import matplotlib.pyplot as plt
+
+show_animation = True
+
+
+class AStarPlanner:
+
+    def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y):
+
+        self.resolution = resolution
+        self.rr = rr
+        self.min_x, self.min_y = 0, 0
+        self.max_x, self.max_y = 0, 0
+        self.obstacle_map = None
+        self.x_width, self.y_width = 0, 0
+        self.motion = self.get_motion_model()
+        self.calc_obstacle_map(ox, oy)
+
+        self.fc_x = fc_x
+        self.fc_y = fc_y
+        self.tc_x = tc_x
+        self.tc_y = tc_y
+
+        self.Delta_C1 = 0.3
+        self.Delta_C2 = 0.15
+
+        self.costPerGrid = 1
+
+
+    class Node:
+        def __init__(self, x, y, cost, parent_index):
+            self.x = x
+            self.y = y
+            self.cost = cost
+            self.parent_index = parent_index
+
+        def __str__(self):
+            return str(self.x) + "," + str(self.y) + "," + str(
+                self.cost) + "," + str(self.parent_index)
+
+    def planning(self, sx, sy, gx, gy):
+
+        start_node = self.Node(self.calc_xy_index(sx, self.min_x),
+                               self.calc_xy_index(sy, self.min_y), 0.0, -1)
+        goal_node = self.Node(self.calc_xy_index(gx, self.min_x),
+                              self.calc_xy_index(gy, self.min_y), 0.0, -1)
+
+        open_set, closed_set = dict(), dict()
+        open_set[self.calc_grid_index(start_node)] = start_node
+
+        while 1:
+            if len(open_set) == 0:
+                print("Open set is empty..")
+                # Return empty lists on failure
+                return [], []
+
+            c_id = min(
+                open_set,
+                key=lambda o: open_set[o].cost + self.calc_heuristic(self, goal_node,
+                                                                     open_set[o]))
+            current = open_set[c_id]
+
+            if show_animation:
+                plt.plot(self.calc_grid_position(current.x, self.min_x),
+                         self.calc_grid_position(current.y, self.min_y), "xc")
+                plt.gcf().canvas.mpl_connect('key_release_event',
+                                             lambda event: [exit(
+                                                 0) if event.key == 'escape' else None])
+                if len(closed_set.keys()) % 10 == 0:
+                    plt.pause(0.001)
+
+            if current.x == goal_node.x and current.y == goal_node.y:
+                print("Total Trip time required -> ",current.cost )
+                goal_node.parent_index = current.parent_index
+                goal_node.cost = current.cost
+                break
+
+            del open_set[c_id]
+
+            closed_set[c_id] = current
+
+            for i, _ in enumerate(self.motion):
+                node = self.Node(current.x + self.motion[i][0],
+                                 current.y + self.motion[i][1],
+                                 current.cost + self.motion[i][2] * self.costPerGrid, c_id)
+
+                # Cost Intensive Area 1 (tc_x, tc_y)
+                if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
+                        node.cost = node.cost + self.Delta_C1 * self.motion[i][2]
+
+                # Cost Intensive Area 2 (fc_x, fc_y)
+                if self.calc_grid_position(node.x, self.min_x) in self.fc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.fc_y:
+                        node.cost = node.cost + self.Delta_C2 * self.motion[i][2]
+
+                n_id = self.calc_grid_index(node)
+
+                if not self.verify_node(node):
+                    continue
+
+                if n_id in closed_set:
+                    continue
+
+                if n_id not in open_set:
+                    open_set[n_id] = node
+                else:
+                    if open_set[n_id].cost > node.cost:
+                        open_set[n_id] = node
+
+        rx, ry, total_cost = self.calc_final_path(goal_node, closed_set)
+
+        return rx, ry, total_cost
+
+    def calc_final_path(self, goal_node, closed_set):
+        rx, ry = [self.calc_grid_position(goal_node.x, self.min_x)], [
+            self.calc_grid_position(goal_node.y, self.min_y)]
+        parent_index = goal_node.parent_index
+        total_cost = goal_node.cost
+        while parent_index != -1:
+            n = closed_set[parent_index]
+            rx.append(self.calc_grid_position(n.x, self.min_x))
+            ry.append(self.calc_grid_position(n.y, self.min_y))
+            parent_index = n.parent_index
+
+        return rx, ry, total_cost
+
+    @staticmethod
+    def calc_heuristic(self, n1, n2):
+        w = 1.0
+        d = w * math.hypot(n1.x - n2.x, n1.y - n2.y)
+        d = d * self.costPerGrid
+        return d
+
+    # This function is not used in the planning, but I'll update it to be a class method
+    # and use the standard math.fabs as it seems intended.
+    def calc_heuristic_maldis(self, n1, n2):
+        w = 1.0
+        dx = w * math.fabs(n1.x - n2.x)
+        dy = w * math.fabs(n1.y - n2.y)
+        return dx + dy
+
+    def calc_grid_position(self, index, min_position):
+        pos = index * self.resolution + min_position
+        return pos
+
+    def calc_xy_index(self, position, min_pos):
+        return round((position - min_pos) / self.resolution)
+
+    def calc_grid_index(self, node):
+        return (node.y - self.min_y) * self.x_width + (node.x - self.min_x)
+
+    def verify_node(self, node):
+        px = self.calc_grid_position(node.x, self.min_x)
+        py = self.calc_grid_position(node.y, self.min_y)
+
+        if px < self.min_x:
+            return False
+        elif py < self.min_y:
+            return False
+        elif px >= self.max_x:
+            return False
+        elif py >= self.max_y:
+            return False
+
+        if self.obstacle_map[node.x][node.y]:
+            return False
+
+        return True
+
+    def calc_obstacle_map(self, ox, oy):
+
+        self.min_x = round(min(ox))
+        self.min_y = round(min(oy))
+        self.max_x = round(max(ox))
+        self.max_y = round(max(oy))
+        print("min_x:", self.min_x)
+        print("min_y:", self.min_y)
+        print("max_x:", self.max_x)
+        print("max_y:", self.max_y)
+
+        self.x_width = round((self.max_x - self.min_x) / self.resolution)
+        self.y_width = round((self.max_y - self.min_y) / self.resolution)
+        print("x_width:", self.x_width)
+        print("y_width:", self.y_width)
+
+        self.obstacle_map = [[False for _ in range(self.y_width)]
+                             for _ in range(self.x_width)]
+        for ix in range(self.x_width):
+            x = self.calc_grid_position(ix, self.min_x)
+            for iy in range(self.y_width):
+                y = self.calc_grid_position(iy, self.min_y)
+                for iox, ioy in zip(ox, oy):
+                    d = math.hypot(iox - x, ioy - y)
+                    if d <= self.rr:
+                        self.obstacle_map[ix][iy] = True
+                        break
+
+    @staticmethod
+    def get_motion_model():
+        motion = [[1, 0, 1],
+                  [0, 1, 1],
+                  [-1, 0, 1],
+                  [0, -1, 1],
+                  [-1, -1, math.sqrt(2)],
+                  [-1, 1, math.sqrt(2)],
+                  [1, -1, math.sqrt(2)],
+                  [1, 1, math.sqrt(2)]]
+
+        return motion
+
+
+def main():
+    print(__file__ + " start the A star algorithm demo !!")
+
+    sx = 0.0
+    sy = 0.0
+    gx = 50.0
+    gy = 50.0
+    grid_size = 1
+    robot_radius = 1.0
+
+
+    ox, oy = [], []
+    for i in range(-10, 60):
+        ox.append(i)
+        oy.append(-10.0)
+    for i in range(-10, 60):
+        ox.append(60.0)
+        oy.append(i)
+    for i in range(-10, 61):
+        ox.append(i)
+        oy.append(60.0)
+    for i in range(-10, 61):
+        ox.append(-10.0)
+        oy.append(i)
+    start_x, start_y = 20, 0
+    end_x, end_y = 25, 20
+    steps = 425
+    for i in range(steps + 1):
+        t = i / steps
+        x = start_x + t * (end_x - start_x)
+        y = start_y + t * (end_y - start_y)
+        ox.append(x)
+        oy.append(y)
+    start_x, start_y = 10, 55
+    end_x, end_y = 25, 45
+    steps = 325
+    for i in range(steps + 1):
+        t = i / steps
+        x = start_x + t * (end_x - start_x)
+        y = start_y + t * (end_y - start_y)
+        ox.append(x)
+        oy.append(y)
+    start_x, start_y = 30, 0
+    end_x, end_y = 45, 10
+    steps = 325
+    for i in range(steps + 1):
+        t = i / steps
+        x = start_x + t * (end_x - start_x)
+        y = start_y + t * (end_y - start_y)
+        ox.append(x)
+        oy.append(y)
+
+
+    tc_x, tc_y = [], []
+    for i in range(10, 26):
+        for j in range(20, 46):
+            tc_x.append(i)
+            tc_y.append(j)
+    fc_x, fc_y = [], []
+    for i in range(30, 46):
+        for j in range(10, 36):
+            fc_x.append(i)
+            fc_y.append(j)
+
+
+    # --- New: Define Checkpoints ---
+    # Checkpoint 1 (CP1) in the 'tc' area (10-25, 20-45). Center chosen: (18, 33)
+    c1x, c1y = 18.0, 33.0
+    # Checkpoint 2 (CP2) in the 'fc' area (30-45, 10-35). Center chosen: (38, 23)
+    c2x, c2y = 38.0, 23.0
+
+    # --- New: Path Planning Sequence ---
+    a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y)
+
+    # 1. Start (sx, sy) to Checkpoint 1 (c1x, c1y)
+    print("\nStarting Path 1: Start to Checkpoint 1")
+    rx1, ry1, cost1 = a_star.planning(sx, sy, c1x, c1y)
+    # The first path is reversed by calc_final_path, so we reverse it back and exclude the start point
+    # to avoid a duplicate plot point later. The start point (sx, sy) is the end of the reversed path.
+    rx1.reverse()
+    ry1.reverse()
+
+    # 2. Checkpoint 1 (c1x, c1y) to Checkpoint 2 (c2x, c2y)
+    print("\nStarting Path 2: Checkpoint 1 to Checkpoint 2")
+    rx2, ry2, cost2 = a_star.planning(c1x, c1y, c2x, c2y)
+    rx2.reverse()
+    ry2.reverse()
+    # Remove the first point (c1x, c1y) to avoid duplication with the end of rx1/ry1
+    rx2 = rx2[1:]
+    ry2 = ry2[1:]
+
+    # 3. Checkpoint 2 (c2x, c2y) to Goal (gx, gy)
+    print("\nStarting Path 3: Checkpoint 2 to Goal")
+    rx3, ry3, cost3 = a_star.planning(c2x, c2y, gx, gy)
+    rx3.reverse()
+    ry3.reverse()
+    # Remove the first point (c2x, c2y) to avoid duplication with the end of rx2/ry2
+    rx3 = rx3[1:]
+    ry3 = ry3[1:]
+
+
+    # --- New: Combine Results ---
+    rx = rx1 + rx2 + rx3
+    ry = ry1 + ry2 + ry3
+    Tbest = cost1 + cost2 + cost3
+    print(f"\nTotal path time (Tbest) across all segments: {Tbest:.2f} minutes")
+
+
+    if show_animation:
+        plt.plot(ox, oy, ".k")
+        plt.plot(sx, sy, "og", label="Start")
+        plt.plot(gx, gy, "xb", label="Goal")
+
+        # Plot checkpoints
+        plt.plot(c1x, c1y, "*r", markersize=10, label="Checkpoint 1 (TC Area)")
+        plt.plot(c2x, c2y, "*y", markersize=10, label="Checkpoint 2 (FC Area)")
+        # Plot cost areas for context
+        plt.plot(fc_x, fc_y, "oy", markersize=1, alpha=0.3, label="FC Area")
+        plt.plot(tc_x, tc_y, "or", markersize=1, alpha=0.3, label="TC Area")
+
+        plt.grid(True)
+        plt.axis("equal")
+        plt.title(f"A* Path with Checkpoints (Tbest = {Tbest:.2f} min)")
+        plt.legend()
+
+
+    # ==== Preserved cost evaluation ====
+    airbuses = {
+        "A321neo": {
+            "fuel_rate": 54,      # kg/min
+            "capacity": 200,
+            "time_cost": {"low": 10, "medium": 15, "high": 20},  # $/min
+            "fixed": 1800         # $
+        },
+        "A330-900neo": {
+            "fuel_rate": 84,
+            "capacity": 300,
+            "time_cost": {"low": 15, "medium": 21, "high": 27},
+            "fixed": 2000
+        },
+        "A350-900": {
+            "fuel_rate": 90,
+            "capacity": 350,
+            "time_cost": {"low": 20, "medium": 27, "high": 34},
+            "fixed": 2500
+        }
+    }
+
+    def per_flight_cost(spec, Tbest_min, fuel_cost_per_kg, time_cost_level):
+        fuel_mass = spec["fuel_rate"] * Tbest_min
+        fuel_cost = fuel_mass * fuel_cost_per_kg
+        time_cost = spec["time_cost"][time_cost_level] * Tbest_min
+        return fuel_cost + time_cost + spec["fixed"]
+
+    def evaluate_scenario(name, passengers, max_flights, time_cost_level, fuel_cost_per_kg):
+        print(f"\n## ✈️ {name}: Tbest={Tbest:.2f} min, time cost={time_cost_level}, fuel cost={fuel_cost_per_kg} $/kg")
+
+        # --- New: Prepare for Table Output ---
+        results = []
+        best_model = None
+        best_total = float("inf")
+
+        # Define table headers
+        header = ["Model", "Flights Needed", "Per-Flight Cost ($)", "Total Cost ($)", "Feasibility"]
+
+        # Calculate results for each model
+        for model, spec in airbuses.items():
+            flights_needed = math.ceil(passengers / spec["capacity"])
+            feasible = flights_needed <= max_flights
+            pf_cost = per_flight_cost(spec, Tbest, fuel_cost_per_kg, time_cost_level)
+
+            total_cost = 0.0
+            feasibility_text = "Feasible"
+
+            if feasible:
+                total_cost = pf_cost * flights_needed
+                if total_cost < best_total:
+                    best_total = total_cost
+                    best_model = model
+            else:
+                feasibility_text = f"Infeasible (Max {max_flights})"
+                total_cost = float('nan') # Use NaN for infeasible total cost
+
+            results.append({
+                "Model": model,
+                "Flights": flights_needed,
+                "PerFlight": f"{pf_cost:.2f}",
+                "TotalCost": f"{total_cost:.2f}" if feasible else "-",
+                "Feasibility": feasibility_text
+            })
+
+        # --- New: Print Table ---
+        print("-" * 85)
+        # Print Header
+        print(f"{header[0]:<15} | {header[1]:^15} | {header[2]:^20} | {header[3]:^15} | {header[4]:<15}")
+        print("-" * 85)
+
+        # Print Rows
+        for row in results:
+            print(f"{row['Model']:<15} | {row['Flights']:^15} | {row['PerFlight']:>20} | {row['TotalCost']:>15} | {row['Feasibility']:<15}")
+
+        print("-" * 85)
+
+        # Print Best Model Summary
+        if best_model is not None:
+            print(f"**Best Aircraft: {best_model}** with Total Cost **${best_total:.2f}**")
+        else:
+            print("No feasible aircraft for this scenario.")
+
+
+    # Scenario 1
+    evaluate_scenario(
+        "Scenario 1",
+        passengers=3300,
+        max_flights=13,
+        time_cost_level="medium",
+        fuel_cost_per_kg=0.85
+    )
+
+    # Scenario 2 (max_flights changed from 7 to 8 in original code)
+    evaluate_scenario(
+        "Scenario 2",
+        passengers=1500,
+        max_flights=8,
+        time_cost_level="high",
+        fuel_cost_per_kg=0.96
+    )
+
+    # Scenario 3
+    evaluate_scenario(
+        "Scenario 3",
+        passengers=2250,
+        max_flights=25,
+        time_cost_level="low",
+        fuel_cost_per_kg=0.78
+    )
+    # ==== End preserved cost evaluation ====
+
+    if show_animation:
+        plt.plot(rx, ry, "-r", label="A* Path")
+        plt.pause(0.001)
+        plt.show()
+
+
+if __name__ == '__main__':
+    main()
+
