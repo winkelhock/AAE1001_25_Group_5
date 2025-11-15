@@ -1,6 +1,6 @@
 <p align="center">
 
-  <h3 align="center">PolyU AAE1001 GitHub Project Group 5 (Five Egg and Toast)</h3>
+  <h3 align="center">PolyU AAE1001 GitHub Project Group 5 Readme (Five Egg and Toast)</h3>
 
 
 <!-- TABLE OF CONTENTS -->
@@ -11,7 +11,25 @@
       <a href="#group-members-and-roles">Group Members and Roles</a>
     </li>
     <li>
-      <a href="#task codes">Tasks Codes</a>
+      <a href="#task 1">Tasks 1</a>
+    </li>
+     <li>
+      <a href="#task 1 Bouns">Tasks 1 Bouns</a>
+    </li>
+     <li>
+      <a href="#task 2">Tasks 2</a>
+    </li>
+    <li>
+      <a href="#task 3">Tasks 3</a>
+    </li>
+    <li>
+      <a href="#additional task 1">Additonal Task 1</a>
+    </li>
+    <li>
+      <a href="#additonal task 2">Additonal Task 2</a>
+    </li>
+    <li>
+      <a href="additonal #task 3">Additional Task 3</a>
     </li>
     <li>
       <a href="#presentation">Presentation Files</a>
@@ -35,7 +53,7 @@
 7. Sylvia, Lau Tsz Wing (25068927D)
 </a>
 
-<!-- Tasks -->
+<!-- Task 1 -->
 ## Tasks
 ### Task 1
 
