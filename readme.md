@@ -107,11 +107,17 @@
 <!-- Group Reflections -->
 ## 9. Group Reflections
 Winkelhock, Yau Yue Hong Winkelhock (25034703D)
+
 Rodgers, Rodgers Mawalla Maighacho (25094994D)
+
 August, Wang Tiancheng (25095793D)
+
 Manny, So Yee Man (25079801D)
+
 Talia, Cheung Yung Ting Talia (25129573D)
+
 Sharon, Chan Chin Ying (25084065D)
+
 Sylvia, Lau Tsz Wing (25068927D)
 
 <!-- Presentation Files -->
