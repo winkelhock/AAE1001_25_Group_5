@@ -74,8 +74,10 @@
 <a href="task2.py"><strong>Task 2 Code</strong></a>
 #### Introducing Jetstream
 #### Description
-The task involved creating a new cost area that can reduce the cost of the route. The aim was to find the best place within the map to set our minus-cost area (jet stream) and reduce cost by 5%
+The task involved creating a new cost area that can reduce the cost of the route. The aim was to find the best place within the map to set our minus-cost area (jet stream) and reduce the cost by 5%. Similarly, the area of the jet stream had to span across the map laterally and extend 5 units vertically.
+
 #### Setting up with code
+
 #### Optimal Placement
 #### Results
 
