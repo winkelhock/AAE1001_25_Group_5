@@ -1,7 +1,6 @@
 <p align="center">
-
   <h3 align="center">PolyU AAE1001 GitHub Project Group 5 Readme (Five Egg and Toast)</h3>
-
+</p>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -11,33 +10,31 @@
       <a href="#group-members-and-roles">Group Members and Roles</a>
     </li>
     <li>
-      <a href="#task 1">Task 1</a>
+      <a href="#task-1">Task 1</a>
     </li>
      <li>
-      <a href="#task 2">Task 2</a>
+      <a href="#task-2">Task 2</a>
     </li>
     <li>
-      <a href="#task 3">Task 3</a>
+      <a href="#task-3">Task 3</a>
     </li>
     <li>
-      <a href="#additional task 1">Additonal Task 1</a>
+      <a href="#additional-task-1">Additional Task 1</a>
     </li>
     <li>
-      <a href="#additonal task 2">Additonal Task 2</a>
+      <a href="#additional-task-2">Additional Task 2</a>
     </li>
     <li>
-      <a href="additonal #task 3">Additional Task 3</a>
+      <a href="#additional-task-3">Additional Task 3</a>
     </li>
     <li>
       <a href="#presentation">Presentation Files</a>
     </li>
     <li>
       <a href="#report">Report</a>
-    </li>    
+    </li>
   </ol>
 </details>
-
-
 
 <!-- Group Members and Roles -->
 ## Group Members and Roles
@@ -48,33 +45,26 @@
 5. Talia, Cheung Yung Ting Talia (25129573D)
 6. Sharon, Chan Chin Ying (25084065D)
 7. Sylvia, Lau Tsz Wing (25068927D)
-</a>
 
 <!-- Tasks -->
 ## Tasks
 
 ## Task 1
-
 <a href="task1.py"><strong>Task 1 Code</strong></a>
 
 ## Task 2
-
 <a href="task2.py"><strong>Task 2 Code</strong></a>
 
 ## Task 3
-
 <a href="task3.py"><strong>Task 3 Code</strong></a>
 
 ## Additional Task 1
-
 <a href="taska1.py"><strong>Task A1 Code</strong></a>
 
 ## Additional Task 2
-
 <a href="taska2.py"><strong>Task A2 Code</strong></a>
 
 ## Additional Task 3
-
 <a href="task a3/A star task a3.py"><strong>Task A3 Astar Code</strong></a>
 <a href="task a3/Dijkstra task a3.py"><strong>Task A3 Dijkstra Code</strong></a>
 <a href="task a3/RRT task a3.py"><strong>Task A3 RRT Code</strong></a>
@@ -84,4 +74,3 @@
 
 <!-- Report -->
 ## Report
-
