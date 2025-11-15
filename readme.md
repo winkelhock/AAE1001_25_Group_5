@@ -50,7 +50,7 @@
 7. Sylvia, Lau Tsz Wing (25068927D)
 </a>
 
-<!-- Task 1 -->
+<!-- Tasks -->
 ## Tasks
 ## Task 1
 
@@ -64,11 +64,11 @@
 
 <a href="task3.py"><strong>Task 3 Code</strong></a>
 
-## Additional Task A1
+## Additional Task 1
 
 <a href="taska1.py"><strong>Task A1 Code</strong></a>
 
-## Additional Task A2
+## Additional Task 2
 
 <a href="taska2.py"><strong>Task A2 Code</strong></a>
 
