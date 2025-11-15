@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">PolyU AAE1001 GitHub Project Group 5 Readme (Five Egg and Toast)</h1>
+  <h1 align="center">PolyU AAE1001 Project Group 5 Readme (Five Egg and Toast)</h1>
 </p>
 
 <!-- TABLE OF CONTENTS -->
