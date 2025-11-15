@@ -45,7 +45,7 @@
 <!-- Group Members and Roles -->
 ## 1. Group Members and Roles
 1. Winkelhock, Yau Yue Hong Winkelhock (25034703D)
-2. Rodgers, Rodgers Mawalla Maighacho (2509499D)
+2. Rodgers, Rodgers Mawalla Maighacho (25094994D)
 3. Manny, So Yee Man (25079801D)
 4. August, Wang Tiancheng (25095793D)
 5. Talia, Cheung Yung Ting Talia (25129573D)
