@@ -1,5 +1,5 @@
 <p align="center">
-  <h1 align="center">PolyU AAE1001 GitHub Project Group 5 Readme (Five Egg and Toast)</h3>
+  <h1 align="center">PolyU AAE1001 GitHub Project Group 5 Readme (Five Egg and Toast)</h1>
 </p>
 
 <!-- TABLE OF CONTENTS -->
@@ -43,7 +43,7 @@
 </details>
 
 <!-- Group Members and Roles -->
-## 1. Group Members and Roles
+## Group Members and Roles
 1. Winkelhock, Yau Yue Hong Winkelhock (25034703D)
 2. Rodgers, Rodgers Mawalla Maighacho (2509499D)
 3. Manny, So Yee Man (25079801D)
@@ -53,26 +53,27 @@
 7. Sylvia, Lau Tsz Wing (25068927D)
 
 <!-- Introduction -->
-## 2. Introduction
+## Introduction
 ### Task Path
 ### Path Planning
 
 <!-- Tasks -->
 ## Tasks
 
-### 3. Task 1
+### Task 1
 <a href="task1.py"><strong>Task 1 Code</strong></a>
 #### Description
 #### Calculation Method
 #### Scenario 1
 #### Scenario 2
 #### Scenario 3
+
 ### Bonus Part
 #### Calculation with Code
 #### Cost Function with Manual Calculation
 #### Outputs
 
-### 4. Task 2
+### Task 2
 <a href="task2.py"><strong>Task 2 Code</strong></a>
 #### Introducing Jetstream
 #### Description
@@ -80,23 +81,23 @@
 #### Optimal Placement
 #### Results
 
-### 5. Task 3
+### Task 3
 <a href="task3.py"><strong>Task 3 Code</strong></a>
 #### Introduction
 #### Scenarios
 #### Calculation
 
-### 6. Additional Task 1
+### Additional Task 1
 <a href="taska1.py"><strong>Task A1 Code</strong></a>
 #### Modified Code
 #### Results
 
-### 7. Additional Task 2
+### Additional Task 2
 <a href="taska2.py"><strong>Task A2 Code</strong></a>
 #### Description
 #### Results with modified code
 
-### 8. Additional Task 3
+### Additional Task 3
 <a href="task a3/A star task a3.py"><strong>Task A3 Astar Code</strong></a>
 <a href="task a3/Dijkstra task a3.py"><strong>Task A3 Dijkstra Code</strong></a>
 <a href="task a3/RRT task a3.py"><strong>Task A3 RRT Code</strong></a>
@@ -107,10 +108,10 @@
 #### Summarize
 
 <!-- Group Reflections -->
-## 9. Reflections
+## Group Reflections
 
 <!-- Presentation -->
-## 10. Presentation Files
+## Presentation Files
 
 <!-- Report -->
-## 11. Report
+## Report
