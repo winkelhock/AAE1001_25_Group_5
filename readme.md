@@ -74,9 +74,12 @@
 <a href="task2.py"><strong>Task 2 Code</strong></a>
 #### Introducing Jetstream
 #### Description
-The task involved creating a new cost area that can reduce the cost of the route. The aim was to find the best place within the map to set our minus-cost area (jet stream) and reduce the cost by 5%. Similarly, the area of the jet stream had to span across the map laterally and extend 5 units vertically.
+The task involved creating a new cost area that can reduce the cost of the route, based on task 1's code. The aim was to find the best place within the map to set our minus-cost area (jet stream) and reduce the cost by 5%. Similarly, the area of the jet stream had to span across the map laterally and extend 5 units vertically.
 
 #### Setting up with code
+Firstly, we performed jet stream initialisation with the AStar Planner Class by modifying it to recognize and use the jet stream parameters; i.e coordinates of the minus cost area, defining the direction of the jet stream and maximum cost reduction.
+
+Then, we established a section that systematically tests every possible vertical placement for the jet stream to find the best placement via the optimization loop. This was done by iterating every possible vertical start position for the jet stream, then redefining the jet stream area for each iteration to satisfy the lateral span.
 
 #### Optimal Placement
 #### Results
