@@ -10,6 +10,9 @@
       <a href="#group-members-and-roles">Group Members and Roles</a>
     </li>
     <li>
+      <a href="#introduction">Introduction</a>
+    </li>
+    <li>
       <a href="#task-1">Task 1</a>
     </li>
      <li>
@@ -26,6 +29,9 @@
     </li>
     <li>
       <a href="#additional-task-3">Additional Task 3</a>
+    </li>
+     <li>
+      <a href="#reflections">Group Reflections</a>
     </li>
     <li>
       <a href="#presentation">Presentation Files</a>
@@ -46,31 +52,65 @@
 6. Sharon, Chan Chin Ying (25084065D)
 7. Sylvia, Lau Tsz Wing (25068927D)
 
+<!-- Introduction -->
+## Introduction
+### Task Path
+### Path Planning
+
 <!-- Tasks -->
 ## Tasks
 
 ### Task 1
 <a href="task1.py"><strong>Task 1 Code</strong></a>
+#### Description
+#### Calculation Method
+#### Scenario 1
+#### Scenario 2
+#### Scenario 3
+### Bonus Part
+#### Calculation with Code
+#### Cost Function with Manual Calculation
+#### Outputs
 
 ### Task 2
 <a href="task2.py"><strong>Task 2 Code</strong></a>
+#### Introducing Jetstream
+#### Description
+#### Setting up with code
+#### Optimal Placement
+#### Results
 
 ### Task 3
 <a href="task3.py"><strong>Task 3 Code</strong></a>
+#### Introduction
+#### Scenarios
+#### Calculation
 
 ### Additional Task 1
 <a href="taska1.py"><strong>Task A1 Code</strong></a>
+#### Modified Code
+#### Results
 
 ### Additional Task 2
 <a href="taska2.py"><strong>Task A2 Code</strong></a>
+#### Description
+#### Results with modified code
 
 ### Additional Task 3
 <a href="task a3/A star task a3.py"><strong>Task A3 Astar Code</strong></a>
 <a href="task a3/Dijkstra task a3.py"><strong>Task A3 Dijkstra Code</strong></a>
 <a href="task a3/RRT task a3.py"><strong>Task A3 RRT Code</strong></a>
+#### Description of A*, Dijkstra and RRT
+#### Theories
+#### Performance
+#### Limitations
+#### Summarize
+
+<!-- Group Reflections -->
+## Reflections
 
 <!-- Presentation -->
-## Presentation
+## Presentation Files
 
 <!-- Report -->
 ## Report
