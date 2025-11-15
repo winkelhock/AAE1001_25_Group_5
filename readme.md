@@ -79,7 +79,10 @@ The task involved creating a new cost area that can reduce the cost of the route
 #### Setting up with code
 Firstly, we performed jet stream initialisation with the AStar Planner Class by modifying it to recognize and use the jet stream parameters; i.e coordinates of the minus cost area, defining the direction of the jet stream and maximum cost reduction.
 
-Then, we established a section that systematically tests every possible vertical placement for the jet stream to find the best placement via the optimization loop. This was done by iterating every possible vertical start position for the jet stream, then redefining the jet stream area for each iteration to satisfy the lateral span.
+Then, we established a section that systematically tests every possible vertical placement for the jet stream to find the best placement via the optimization loop. This was done by iterating every possible vertical start position for the jet stream, then redefining the jet stream area for each iteration to satisfy the lateral span. A new AStar planner is initialized in every loop iteration with the current stream coordinates and then the 'if current_time<best_time:' function compares the resulting path cost from the current jet stream placement to the running minimum.
+
+The cost calculation logic was then performed via the planning method; whereby the 5% cost reduction was applied to the path search during the AStar algorithm. The code checks if the current node is inside the jet stream area while the discount code reduces the node cost by a maximum of 5% as it is set to 0.05.
+
 
 #### Optimal Placement
 #### Results
