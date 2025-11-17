@@ -241,7 +241,7 @@ Winkelhock, Yau Yue Hong Winkelhock (25034703D)
 
 Rodgers, Rodgers Mawalla Maighacho (25094994D)
 
-The group project enabled me to gain numerous collaboration and leadership skills. By overseeing the project, I learnt the positive effect of adhering to mini-deadlines, i.e finishing presentation slides within a weekend and ensuring everyone stays up to date with their tasks. I gained some coding knowledge from the coding leader, through whom I learnt to update our code in GitHub and run it to ensure it satisfies the assessment criteria. Additionally, through the lectures, I was able to acquire skills to be efficient in using AI to modify and correct various code segments, making the work cleaner and easier to interpret, especially for me as a coding beginner.
+The group project enabled me to gain numerous collaboration and leadership skills. By overseeing the project, I learnt the positive effect of adhering to mini-deadlines, i.e finishing presentation slides within a weekend and ensuring everyone stays up to date with their tasks. I gained some coding knowledge from the coding leader, through whom I learnt to update our code in GitHub and run it to ensure it satisfies the assessment criteria. Additionally, through the lectures, I was able to acquire skills to be efficient in using AI to modify and correct various code segments, making the work cleaner and easier to interpret, especially for me as a coding beginner. In managing task 2, which involved finding an optimum cost area based on set restraints (5% reduction cost along the jet stream and specific jet stream dimensions), I was able to understand how the AStar planner 
 
 
 August, Wang Tiancheng (25095793D)
