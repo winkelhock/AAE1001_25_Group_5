@@ -196,45 +196,34 @@ RRT is fast in the provided grid, as it finds a feasible path quickly through ra
 ---
 ### Strengths and Limitations
 ---
-#### A*
+### A*
 
 #### Strengths:
-- Efficient with a Good Heuristic: Outperforms Dijkstra’s and BFS in large spaces by focusing exploration on nodes closer to the goal.
-- Optimal Path Guarantee: Finds the shortest path if the heuristic is admissible and consistent.
-- Goal-Oriented: Prioritizes nodes near the goal, making it highly effective for goal-directed tasks in both weighted and unweighted graphs.
+A* is efficient with a good heuristic, outperforming Dijkstra’s and BFS in large spaces by focusing exploration on nodes closer to the goal; it also guarantees an optimal path if the heuristic is admissible and consistent, and is goal-oriented—prioritizing nodes near the goal to be highly effective for goal-directed tasks in both weighted and unweighted graphs.
 
 #### Limitations:
-- Heuristic-Dependent: Performance relies heavily on the heuristic; a poor or non-admissible heuristic can lead to suboptimal paths or excessive exploration.
-- Memory-Intensive: Stores all potential paths and their costs in open/closed sets, which is problematic in extremely large graphs.
-- Implementation Complexity: More complex than BFS or Dijkstra’s due to the need for a well-designed heuristic and priority queue management.
+A* is heuristic-dependent, as its performance relies heavily on the heuristic (a poor or non-admissible heuristic can lead to suboptimal paths or excessive exploration); it is also memory-intensive, storing all potential paths and their costs in open/closed sets, which becomes problematic in extremely large graphs, and has higher implementation complexity than BFS or Dijkstra’s due to the need for a well-designed heuristic and priority queue management.
 
 
 
-#### Djikstra
+### Djikstra
 
 #### Strengths:
-- Guaranteed Optimality: Always finds the shortest path in graphs with non-negative edge weights.
-- Simplicity: Easier to implement than A* and has predictable behavior.
-- Completeness: Will find a path if one exists.
+Dijkstra’s algorithm guarantees optimality by always finding the shortest path in graphs with non-negative edge weights, offers simplicity as it is easier to implement than A* with predictable behavior, and ensures completeness by finding a path if one exists.
+
 
 #### Limitations:
-- Slow in Large Spaces: Explores all nodes exhaustively without goal-directed guidance, leading to inefficiency in large or dense graphs.
-- High Memory Usage: Stores all visited nodes in memory, which becomes problematic for very large graphs.
-- Over-Exploration: Wastes resources on nodes far from the goal, even when a closer path exists.
+Dijkstra’s algorithm is slow in large spaces as it explores all nodes exhaustively without goal-directed guidance, leading to inefficiency in large or dense graphs; it has high memory usage due to storing all visited nodes, which becomes problematic for very large graphs, and suffers from over-exploration by wasting resources on nodes far from the goal even when a closer path exists.
 
 
 
-#### RRT
+### RRT
 
 #### Strengths:
-- Efficiency in High-Dimensional Spaces: Excels in large, unstructured, or high-dimensional environments where grid-based algorithms struggle.
-- Low Memory Usage: Stores only a tree of sampled nodes, avoiding the need to track all explored space.
-- Adaptability to Non-Holonomic Systems: Works well for robots or vehicles with movement constraints.
+RRT (Rapidly Exploring Random Tree) excels in high-dimensional spaces, outperforming grid-based algorithms in large, unstructured environments; it has low memory usage by storing only a tree of sampled nodes instead of tracking all explored space, and is adaptable to non-holonomic systems, working well for robots or vehicles with movement constraints.
 
 #### Limitations:
-- Non-Optimal Paths: Does not guarantee the shortest path; random sampling often produces suboptimal or jagged routes.
-- Probabilistic Completeness: Finds a path with high likelihood if one exists but not with absolute certainty.
-- Path Quality Variability: Results depend heavily on parameters like sampling density and iteration count, leading to inconsistent path quality.
+RRT does not guarantee optimal paths—random sampling often produces suboptimal or jagged routes; it only achieves probabilistic completeness, finding a path with high likelihood if one exists but not with absolute certainty, and has variable path quality as results depend heavily on parameters like sampling density and iteration count.
 
 ---
 
