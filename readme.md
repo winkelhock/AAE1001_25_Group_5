@@ -217,6 +217,14 @@ RRT is fast in the provided grid, as it finds a feasible path quickly through ra
 
 ### Summarize
 
+### Algorithm Comparison Summary
+
+| Algorithm          | Theory                                                                 | Strengths                                                                 | Limitations                                                                 | Performance                                                 |
+|--------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------|
+| **A\***            | - Uses f(n) = g(n) + h(n) , g(n) = start cost, h(n) = heuristic to goal.<br>- Informed & goal-directed. | - Efficient with good heuristic<br>- Goal-focused<br>- Finds optimal path | - Heuristic-dependent<br>- High memory use<br>- Complex logic               | - Fast (good heuristic)<br>- Slower (poor heuristic)        |
+| **Dijkstra**       | - Explores nodes by smallest known distance from source.<br>- Works on non-negative edge-weight graphs. | - Guarantees shortest path<br>- No heuristic needed<br>- Handles non-negative weights | - Explores irrelevant nodes<br>- Not goal-oriented<br>- Heavy memory use    | - Explores many nodes<br>- Slower than A* (good heuristic)  |
+| **RRT**            | - Grows random tree from start, samples nodes to reach goal.<br>- Uses collision check for path feasibility. | - Simple to implement<br>- Works in high-dimensional space<br>- Avoids full graph search | - Non-optimal path<br>- Randomness affects efficiency<br>- Slow in cluttered space | - Fast (sparse environments)<br>- Unreliable (narrow passages) |
+
 <!-- Group Reflections -->
 ## 9. Group Reflections
 Winkelhock, Yau Yue Hong Winkelhock (25034703D)
