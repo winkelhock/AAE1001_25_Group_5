@@ -215,7 +215,7 @@ RRT is fast in the provided grid, as it finds a feasible path quickly through ra
 - Probabilistic Completeness: Finds a path with high likelihood if one exists but not with absolute certainty.
 - Path Quality Variability: Results depend heavily on parameters like sampling density and iteration count, leading to inconsistent path quality.
 
-### Summarize
+---
 
 ### Algorithm Comparison Summary
 
