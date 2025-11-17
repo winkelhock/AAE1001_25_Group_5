@@ -36,9 +36,6 @@
     <li>
       <a href="#10-presentation-files">Presentation Files</a>
     </li>
-    <li>
-      <a href="#11-report">Report</a>
-    </li>
   </ol>
 </details>
 
@@ -244,5 +241,3 @@ Sylvia, Lau Tsz Wing (25068927D)
 <!-- Presentation Files -->
 ## 10. Presentation Files
 
-<!-- Report -->
-## 11. Report
