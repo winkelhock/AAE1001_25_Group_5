@@ -69,24 +69,48 @@
 
 ## 4. Task 2
 <a href="task2.py"><strong>Task 2 Code</strong></a>
-#### Introducing Jetstream
+
 #### Description
 The task involved creating a new cost area that can reduce the cost of the route, based on task 1's code. The aim was to find the best place within the map to set our minus-cost area (jet stream) and reduce the cost by 5%. Similarly, the area of the jet stream had to span across the map laterally and extend 5 units vertically.
 
 #### Setting up with code
 Firstly, we performed jet stream initialisation with the AStar Planner Class by modifying it to recognise and use the jet stream parameters; i.e coordinates of the minus cost area, defining the direction of the jet stream and maximum cost reduction.
 
+<img width="610" height="219" alt="Screenshot 2025-11-17 at 16 52 08" src="https://github.com/user-attachments/assets/dfa9e22e-0f57-419c-ba35-fb4a84d5907c" />
+
+_(An image showing jet stream initialisation, VS Code, Author's own)_
+
 Then, we established a section that systematically tests every possible vertical placement for the jet stream to find the best placement via the optimisation loop. This was done by iterating every possible vertical start position for the jet stream, then redefining the jet stream area for each iteration to satisfy the lateral span. A new AStar planner is initialised in every loop iteration with the current stream coordinates, and then the 'if current_time<best_time:' function compares the resulting path cost from the current jet stream placement to the running minimum.
 
+<img width="688" height="514" alt="Screenshot 2025-11-17 at 16 52 50" src="https://github.com/user-attachments/assets/64602e92-4b78-494f-b49b-7837834e26d3" />
+
+_(An image showing optical loop placement, VS Code, Author's own)
+_
 The cost calculation logic was then performed via the planning method, whereby the 5% cost reduction was applied to the path search during the A* algorithm. The code checks if the current node is inside the jet stream area, while the discount code reduces the node cost by a maximum of 5% as it is set to 0.05.
 
-Finally, after the loop determines the best time (The lowest cost found), the function shown in the image below takes the optimal time and uses the pandas Dataframe to perform the financial analysis based on scenario 1. 
+<img width="712" height="492" alt="Screenshot 2025-11-17 at 16 55 21" src="https://github.com/user-attachments/assets/c51cfc40-daf3-44b5-b832-cedb33965e15" />
 
+_(An image showing the Cost Calculation logic code, VS Code, Author's Own)_
+
+
+Finally, after the loop determines the best time (i.e., the lowest cost found), the function shown in the image below takes the optimal time. It uses the Pandas DataFrame to perform the financial analysis based on Scenario 1. 
+
+<img width="496" height="394" alt="Screenshot 2025-11-17 at 16 56 59" src="https://github.com/user-attachments/assets/aca8d615-500f-43cc-8acc-024aea5beac0" />
+
+_(An image showing the code performing cost analysis, VS Code, Author's own)_
 
 #### Finalised results
 From these, the optimal placement of the jet stream was a vertical span starting (and including) Y=19 to Y=23; satisfying the 5-unit span requirement. This led to an optimal trip time of about 74.18 minutes, as shown in the image below:
 
+<img width="560" height="501" alt="Screenshot 2025-11-17 at 16 48 23" src="https://github.com/user-attachments/assets/5b3a2ec2-17c4-4c58-b793-07c84920ebef" />
 
+_(An image showing optimal jet stream placement as per the parameters, VS Code, Author's own)_
+
+We were also able to compile the bonus code to find the best aircraft based on scenario 1, task 1, as shown below.
+
+<img width="733" height="296" alt="Screenshot 2025-11-17 at 16 49 06" src="https://github.com/user-attachments/assets/f61286e4-983d-4937-8f6d-826e34dd6673" />
+
+_(An image showing final code analysis results, VS Code, Author's own)_
 
 ## 5. Task 3
 <a href="task3.py"><strong>Task 3 Code</strong></a>
