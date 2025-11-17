@@ -84,8 +84,8 @@ Then, we established a section that systematically tests every possible vertical
 
 <img width="688" height="514" alt="Screenshot 2025-11-17 at 16 52 50" src="https://github.com/user-attachments/assets/64602e92-4b78-494f-b49b-7837834e26d3" />
 
-_(An image showing optical loop placement, VS Code, Author's own)
-_
+_(An image showing optical loop placement, VS Code, Author's own)_
+
 The cost calculation logic was then performed via the planning method, whereby the 5% cost reduction was applied to the path search during the A* algorithm. The code checks if the current node is inside the jet stream area, while the discount code reduces the node cost by a maximum of 5% as it is set to 0.05.
 
 <img width="712" height="492" alt="Screenshot 2025-11-17 at 16 55 21" src="https://github.com/user-attachments/assets/c51cfc40-daf3-44b5-b832-cedb33965e15" />
