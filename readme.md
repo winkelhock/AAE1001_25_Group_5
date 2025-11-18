@@ -254,6 +254,8 @@ Sharon, Chan Chin Ying (25084065D)
 
 Sylvia, Lau Tsz Wing (25068927D)
 
+In this group project, I learned how to use AI effectively to help me in completing tasks. For example, when writing the code, I initially gave a simple instruction to AI, ​​but I found that the results is always wrong, as lots of errors in these codes. After trying few time, I change to asked AI about the meaning of the words in the code. In addition to my understanding, I adjusted the code to achieve the result I wanted. AI also help me to improve my works, gave me ideas which saving my times and allow me to do more things. Moreover, I improved my collaboration and time management skills. Although this group project was not easy, cooperation and mutual assistance among every member made it easier to be complete. Meeting schedules with teammates, meeting deadlines, and breaking up the work into small goals taught me how to prioritize tasks and not rush things at the last minute.
+
 <!-- Presentation Files -->
 ## 10. Presentation Files
 
