@@ -120,6 +120,8 @@ _(An image showing final code analysis results, VS Code, Author's own)_
 
 ## 6. Additional Task 1
 <a href="taska1.py"><strong>Task A1 Code</strong></a>
+# Description 
+This task is required modify the code inorder to to add two check points in each cost intensive area,
 #### Modified Code
 #### Results
 
