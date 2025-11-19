@@ -56,16 +56,168 @@
 
 ## 3. Task 1
 <a href="task1.py"><strong>Task 1 Code</strong></a>
-#### Description
-#### Calculation Method
-#### Scenario 1
-#### Scenario 2
-#### Scenario 3
+### Description
+The goal of task 1 is to implements an A path planning algorithm* combined with aircraft selection optimization to find the most cost-effective aircraft for flight routes under various operational constraints. Task 1 focuses on selecting the optimal aircraft model from three available options, including A321neo, A330-900neo, and A350-900 that minimizes total operational cost while satisfying passenger transportation requirements and flight frequency limits. The task can be brought down to the following mini-objectives:
+
+Key Objectives:
+
+Path Planning: Use A* algorithm to find the fastest route considering obstacles and cost-intensive areas
+
+Cost Analysis: Evaluate the total operational cost for each aircraft model under different scenarios
+
+Optimization: Determine the best aircraft choice based on minimum cost while meeting constraints
+
+Validation: Compare results across three operational scenarios with varying requirements
+
+Besides, the code has two versions, including human's version and ChatGpt's version. It provide a verification to the result calculated by ChatGpt version.
+
+### Calculation Method
+
+### Cost Formula Overview
+
+The total operational cost per flight is calculated using:
+
+```
+C = CF × F × Tbest + CT × Tbest + Cc
+```
+
+#### Formula Components
+
+| Symbol | Parameter | Description | Unit |
+|--------|-----------|-------------|------|
+| **C** | Total Cost | Complete operational cost per flight | $ (dollars) |
+| **CF** | Fuel Cost | Cost of fuel per kilogram | $/kg |
+| **F** | Fuel Rate | Aircraft fuel consumption rate | kg/min |
+| **Tbest** | Trip Time | Optimal flight time from path planning | minutes |
+| **CT** | Time Cost | Time-related operational cost per minute | $/min |
+| **Cc** | Fixed Cost | Fixed cost independent of time/distance | $ (dollars) |
+
+---
+
+### Total Cost Calculation
+
+| Step | Formula | Description |
+|------|---------|-------------|
+| **1. Calculate Flights Needed** | `Flights = ⌈Passengers / Capacity⌉` | Round up to nearest whole number |
+| **2. Calculate Per-Flight Cost** | `C = CF × F × Tbest + CT × Tbest + Cc` | Use formula above |
+| **3. Calculate Total Cost** | `Total = Per-Flight Cost × Flights` | Multiply by number of flights |
+
+---
+
+### Cost-Intensive Area Modifiers
+
+Aircraft routes may pass through special zones that increase operational costs:
+
+| Area Type | Effect | Time Multiplier |
+|-----------|--------|-----------------|
+| **Time-Consuming Area** | Increases flight time | **+30%** |
+| **Fuel-Consuming Area** | Increases flight time | **+15%** |
+
+---
+
+### Movement Rules (Path Planning)
+
+| Movement Type | Time Cost |
+|---------------|-----------|
+| **Horizontal** | 1 minute |
+| **Vertical** | 1 minute |
+| **Diagonal** | √2 ≈ 1.414 minutes |
+
+---
+
+### Aircraft Specifications Table
+
+| Aircraft Model | Fuel Rate (kg/min) | Capacity (passengers) | Time Cost - Low ($/min) | Time Cost - Medium ($/min) | Time Cost - High ($/min) | Fixed Cost ($) |
+|----------------|--------------------|-----------------------|-------------------------|----------------------------|--------------------------|----------------|
+| **A321neo** | 54 | 200 | 10 | 15 | 20 | 1,800 |
+| **A330-900neo** | 84 | 300 | 15 | 21 | 27 | 2,000 |
+| **A350-900** | 90 | 350 | 20 | 27 | 34 | 2,500 |
+
+---
+
+### Scenario 1
+
+### Scenario Parameters:
+- **Passengers**: 3,300
+- **Maximum Flights Allowed**: 13 flights per week
+- **Time Cost Level**: Medium
+- **Fuel Cost**: $0.85 per kg
+- **Trip Time (Tbest)**: 74.53 minutes
+
+### Aircraft Evaluation Table:
+
+| Aircraft Model | Fuel Rate (kg/min) | Capacity (passengers) | Flights Required | Fuel Cost per Flight | Time Cost per Flight | Fixed Cost | Per-Flight Cost | Total Cost | Status |
+|----------------|--------------------|-----------------------|------------------|----------------------|----------------------|------------|-----------------|------------|--------|
+| **A321neo** | 54 | 200 | 17 | — | — | $1,800 | — | — |  **INFEASIBLE** (exceeds 13 flight limit) |
+| **A330-900neo** | 84 | 300 | 11 | $5,315.34 | $1,565.13 | $2,000 | $8,880.47 | **$97,685.17** |  **BEST CHOICE** (11 ≤ 13 flights) |
+| **A350-900** | 90 | 350 | 10 | $5,708.45 | $2,012.31 | $2,500 | $10,220.76 | $102,207.60 |  **FEASIBLE** (10 ≤ 13 flights) |
+
+### Scenario 1 Result:
+** Best Aircraft: A330-900neo**
+- **Total Cost**: $97,685.17
+
+### Scenario 2
+
+### Scenario Parameters:
+- **Passengers**: 1,500
+- **Maximum Flights Allowed**: 7 flights per week
+- **Time Cost Level**: High
+- **Fuel Cost**: $0.96 per kg
+- **Trip Time (Tbest)**: 74.53 minutes
+
+### Aircraft Evaluation Table:
+
+| Aircraft Model | Fuel Rate (kg/min) | Capacity (passengers) | Flights Required | Fuel Cost per Flight | Time Cost per Flight | Fixed Cost | Per-Flight Cost | Total Cost | Status |
+|----------------|--------------------|-----------------------|------------------|----------------------|----------------------|------------|-----------------|------------|--------|
+| **A321neo** | 54 | 200 | 8 | $3,862.31 | $1,490.60 | $1,800 | $7,152.91 | $57,223.28 |  **INFEASIBLE** (8 > 7 flights) |
+| **A330-900neo** | 84 | 300 | 5 | $6,016.43 | $2,012.31 | $2,000 | $10,028.74 | **$50,143.70** |  **BEST CHOICE** (5 ≤ 7 flights) |
+| **A350-900** | 90 | 350 | 5 | $6,447.07 | $2,534.02 | $2,500 | $11,481.09 | $57,405.45 |  **FEASIBLE** (5 ≤ 7 flights) |
+
+### Scenario 2 Result:
+** Best Aircraft: A330-900neo**
+- **Total Cost**: $50,143.70
+
+### Scenario 3
+
+### Scenario Parameters:
+- **Passengers**: 2,250
+- **Maximum Flights Allowed**: 25 flights per week
+- **Time Cost Level**: Low
+- **Fuel Cost**: $0.78 per kg
+- **Trip Time (Tbest)**: 74.53 minutes
+
+### Aircraft Evaluation Table:
+
+| Aircraft Model | Fuel Rate (kg/min) | Capacity (passengers) | Flights Required | Fuel Cost per Flight | Time Cost per Flight | Fixed Cost | Per-Flight Cost | Total Cost | Status |
+|----------------|--------------------|-----------------------|------------------|----------------------|----------------------|------------|-----------------|------------|--------|
+| **A321neo** | 54 | 200 | 12 | $3,137.55 | $745.30 | $1,800 | $5,682.85 | $68,194.20 |  **FEASIBLE** (12 ≤ 25 flights) |
+| **A330-900neo** | 84 | 300 | 8 | $4,892.63 | $1,117.95 | $2,000 | $8,010.58 | **$64,084.64** |  **BEST CHOICE** (8 ≤ 25 flights) |
+| **A350-900** | 90 | 350 | 7 | $5,241.60 | $1,490.60 | $2,500 | $9,232.20 | $64,625.40 |  **FEASIBLE** (7 ≤ 25 flights) |
+
+### Scenario 3 Result:
+** Best Aircraft: A330-900neo**
+- **Total Cost**: $64,084.64
+- **Rationale**: All three aircraft are feasible, but A330-900neo provides the optimal balance between capacity utilization and operational costs, achieving the lowest total cost
 
 ### Bonus Part
+
+The bonus part is required that unsing python find out the best aircraft. The code has been enhanced with automatic cost calculation capabilities that all cost calculations are performed automatically within the program, creating formatted tables for easy comparison. Besides, it can automatically checks if aircraft options are feasible given constraints and compare all feasible options and identifies the minimum-cost choice.
+
 #### Calculation with Code
+
+AI Version (task1.py)
+The AI version provides a streamlined implementation with integrated cost calculations:
+
+Manny Version (Task-A-by-Manny.py)
+The Manny version demonstrates detailed manual calculation approach
+
 #### Cost Function with Manual Calculation
+
+
+
 #### Outputs
+Summary of Results
+Key Finding: A330-900neo emerges as the optimal choice across all three scenarios, providing the best balance between operational efficiency and cost-effectiveness.
 
 ## 4. Task 2
 <a href="task2.py"><strong>Task 2 Code</strong></a>
