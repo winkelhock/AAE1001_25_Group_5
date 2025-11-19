@@ -55,9 +55,10 @@
 ### Path Planning
 
 ## 3. Task 1
-<a href="task1.py"><strong>Task 1 Code</strong></a>
 ### Description
 The goal of task 1 is to implements an A path planning algorithm* combined with aircraft selection optimization to find the most cost-effective aircraft for flight routes under various operational constraints. Task 1 focuses on selecting the optimal aircraft model from three available options, including A321neo, A330-900neo, and A350-900 that minimizes total operational cost while satisfying passenger transportation requirements and flight frequency limits. The task can be brought down to the following mini-objectives:
+
+<img width="718" height="541" alt="image" src="https://github.com/user-attachments/assets/9be4a630-8893-4ec6-96e4-8e9c33538f5e" />
 
 Key Objectives:
 
@@ -134,6 +135,9 @@ Aircraft routes may pass through special zones that increase operational costs:
 | **A350-900** | 90 | 350 | 20 | 27 | 34 | 2,500 |
 
 ---
+<img width="445" height="13" alt="image" src="https://github.com/user-attachments/assets/90a76748-3f21-4b69-9bdf-f360318ca768" />
+
+As shown in the table, the best to travel is about 74.53
 
 ### Scenario 1
 
@@ -203,19 +207,36 @@ Aircraft routes may pass through special zones that increase operational costs:
 
 The bonus part is required that unsing python find out the best aircraft. The code has been enhanced with automatic cost calculation capabilities that all cost calculations are performed automatically within the program, creating formatted tables for easy comparison. Besides, it can automatically checks if aircraft options are feasible given constraints and compare all feasible options and identifies the minimum-cost choice.
 
-#### Calculation with Code
+### Calculation with Code
 
 AI Version (task1.py)
 The AI version provides a streamlined implementation with integrated cost calculations:
+<img width="1495" height="851" alt="image" src="https://github.com/user-attachments/assets/b4d5caf3-ec28-4ff0-af89-11193f70f888" />
+<img width="1464" height="430" alt="image" src="https://github.com/user-attachments/assets/41459e5d-f326-40e0-b6f6-0e54bb091d67" />
+<img width="602" height="644" alt="image" src="https://github.com/user-attachments/assets/c3c46ad4-78cd-44ce-a68d-ca9bfc1c66d1" />
 
 Manny Version (Task-A-by-Manny.py)
 The Manny version demonstrates detailed manual calculation approach
+<img width="802" height="657" alt="image" src="https://github.com/user-attachments/assets/85e6b12d-9d69-4bc4-9365-aab3c27e8ede" />
 
-#### Cost Function with Manual Calculation
+### Comparasion with Ai and human result
+
+Human
+
+<img width="775" height="351" alt="image" src="https://github.com/user-attachments/assets/04accaeb-7e36-4c9e-b192-71b506443321" />
+
+ChatGpt
+
+<img width="928" height="653" alt="image" src="https://github.com/user-attachments/assets/a7c675ee-06a8-4d67-ab83-382993288f0b" />
 
 
+### Cost Function with Manual Calculation
 
-#### Outputs
+<img width="802" height="512" alt="image" src="https://github.com/user-attachments/assets/576934ad-de0c-45aa-830e-d8f788e629d7" />
+
+Calculating using Excel
+
+### Outputs
 Summary of Results
 Key Finding: A330-900neo emerges as the optimal choice across all three scenarios, providing the best balance between operational efficiency and cost-effectiveness.
 
