@@ -420,8 +420,9 @@ Rodgers, Rodgers Mawalla Maighacho (25094994D)
 
 The group project enabled me to gain numerous collaboration and leadership skills. By overseeing the project, I learnt the positive effect of adhering to mini-deadlines, i.e finishing presentation slides within a weekend and ensuring everyone stays up to date with their tasks. I gained some coding knowledge from the coding leader, through whom I learnt to update our code in GitHub and run it to ensure it satisfies the assessment criteria. Additionally, through the lectures, I was able to acquire skills to be efficient in using AI to modify and correct various code segments, making the work cleaner and easier to interpret, especially for me as a coding beginner. In managing task 2, which involved finding an optimum cost area based on set restraints (5% reduction cost along the jet stream and specific jet stream dimensions), I was able to understand how the AStar planner 
 
-
 August, Wang Tiancheng (25095793D)
+
+Before this project, I had absolutely no programming background and even felt overwhelmed when I first saw the code files. However, I'm really interested in aircrafts and their path planning, so I made my decision to trymy best. At first, I struggled to even run the test cases, but I watched beginner tutorials in my free time and practiced step by step—gradually, I could not only verify the algorithm’s outputs but also spot small formatting errors in the code comments. In the process of completing additional tasks, I even learn more about Python. Our group is really collaborative, everyone focus on their tasks and help each other. This experience taught me that group collaboration turns daunting challenges into manageable steps. I didn’t just learn the basics of coding and documentation, but also how to ask for help and contribute to a team even when I’m new to a skill. It’s been a valuable lesson that I’ll carry into future group work.
 
 Manny, So Yee Man (25079801D)
 
