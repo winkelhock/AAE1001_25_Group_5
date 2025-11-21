@@ -205,7 +205,7 @@ As shown in the table, the best to travel is about 74.53
 
 ### Bonus Part
 
-The bonus part is required that unsing python find out the best aircraft. The code has been enhanced with automatic cost calculation capabilities that all cost calculations are performed automatically within the program, creating formatted tables for easy comparison. Besides, it can automatically checks if aircraft options are feasible given constraints and compare all feasible options and identifies the minimum-cost choice.
+The bonus part is required that using python find out the best aircraft. The code has been enhanced with automatic cost calculation capabilities that all cost calculations are performed automatically within the program, creating formatted tables for easy comparison. Besides, it can automatically checks if aircraft options are feasible given constraints and compare all feasible options and identifies the minimum-cost choice.
 
 ### Calculation with Code
 
