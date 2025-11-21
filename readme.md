@@ -293,10 +293,10 @@ _(An image showing final code analysis results, VS Code, Author's own)_
 
 ## 6. Additional Task 1
 <a href="taska1.py"><strong>Task A1 Code</strong></a>
-# Description of task
+### Description of task
 This task is required modify the code in order to add two check points in each cost intensive area, and let the route pass through these check points before reaching the destination. 
 
-# What was modified in the code?
+### What was modified in the code?
 The code from Task 1 was used to keep the template of our map with the specific cost intensive areas and obstacles. First, to add the check points on each cost intensive area, defining the coordinates of the check points is required before initialize the A Star Planner.
 
 After that, we can use the A Star Planner to find the optimal route from start to check point 1, from check point 1 to check point 2, from check point 2 to final destination. These separate routes will then be added up together into one route from start to the final destination. The cost (in minutes) of these three segments will also be summed up to find the "Total path time (Tbest) across all segments", this will be printed on the top of the animation and in the output. 
@@ -432,6 +432,7 @@ Before this project, I had absolutely no programming background and even felt ov
 Manny, So Yee Man (25079801D)
 
 Talia, Cheung Yung Ting Talia (25129573D)
+This project has gave me a glance at how flight planning works in the aviation industry, I find it most interesting is that flight planning requires check points in order to make flights safer and easier to plan. I've seen how artifical intelligent can help us human who's working for flight planning and aircraft designing through using code to summarise and calcuate datas all in one code. However, as my teammates and I have encountered countless of errors even with the AI generating the codes, we've learn the importance of verifying the codes with the data output by seeing if the numbers make sense when we input different datas. Using AI could also help me understand more about how coding works, such as learning about functions.
 
 Sharon, Chan Chin Ying (25084065D)
 
