@@ -377,7 +377,7 @@ RRT is fast in the provided grid, as it finds a feasible path quickly through ra
 A* is efficient with a good heuristic, outperforming Dijkstra’s and BFS in large spaces by focusing exploration on nodes closer to the goal; it also guarantees an optimal path if the heuristic is admissible and consistent, and is goal-oriented—prioritizing nodes near the goal to be highly effective for goal-directed tasks in both weighted and unweighted graphs.
 
 #### Limitations:
-A* is heuristic-dependent, as its performance relies heavily on the heuristic (a poor or non-admissible heuristic can lead to suboptimal paths or excessive exploration); it is also memory-intensive, storing all potential paths and their costs in open/closed sets, which becomes problematic in extremely large graphs, and has higher implementation complexity than BFS or Dijkstra’s due to the need for a well-designed heuristic and priority queue management.
+A* is heuristic-dependent, as its performance relies heavily on the heuristic (a poor or non-admissible heuristic can lead to suboptimal paths or excessive exploration); it is also memory-intensive, storing all potential paths and their costs in open/closed sets, which becomes problematic in extremely large graphs, and has higher implementation complexity than RRT or Dijkstra’s due to the need for a well-designed heuristic and priority queue management.
 
 
 
