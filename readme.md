@@ -371,30 +371,30 @@ A feature of the program is that the check points could be changed in line 281 a
 ---
 - **A***
 
-A* was developed in 1968 by Peter Hart, Nils Nilsson, and Bertram Raphael. It is a heuristic-optimized pathfinding algorithm widely used to find the shortest/lowest-cost path between two points.
+A* was developed in 1968 by Peter Hart, Nils Nilsson, and Bertram Raphael. It is an algorithm that is widely used to find the shortest cost path between two points.
 
 - **Dijkstra**
 
-The Dijkstra path planning algorithm is a classic algorithm used to find the shortest path between nodes in a graph. Developed by Edsger Dijkstra in 1956, it is widely used in network routing, robotics, and mapping applications.
+The Dijkstra path planning algorithm is a classic algorithm that is used to find the shortest path between nodes in a graph. It is developed by Edsger Dijkstra in 1956, and  it is widely used in network routing, robotics, and mapping applications.
 
 - **RRT (Rapidly-exploring Random Tree)**
 
-RRT was proposed in 1998 by Steven M. LaValle. It is a widely used method for solving complex motion planning problems, especially in high-dimensional spaces such as robotics and autonomous vehicles.
+RRT was launched in 1998 by Steven M. LaValle. It is a path planning method for solving complex motion problems. It is especially applied in fields like robotics and autonomous vehicles.
 
 ---
 ### Theories
 ---
 - **A***
 
-A* is a smart pathfinding algorithm that balances speed and accuracy. Its core is a cost formula: f(n) = g(n) + h(n). Here, g(n) is the exact cost from the start to the current node, and h(n) is a reasonable guess of the cost from the current node to the goal like straight-line distance. It uses two lists to track nodes: one for nodes to explore and one for nodes already checked to avoid repeats. If the guess h(n) never overestimates the real cost, A* guarantees the shortest path. It works best for simple, grid-based environments (e.g., basic flight path planning).
+A* is a smart path planning algorithm. It balances speed and accuracy well. Its core is a cost formula: f(n) = g(n) + h(n). Here, g(n) is the exact cost from the start node to the current node, and h(n) is a guess of the cost from the current node to the goal node. It uses two lists to track nodes: one for nodes we still need to check, and another one for nodes that we’ve already looked at. This method will avoid repeated work and therefore improve efficiency. If the guess h(n) never overestimates the real cost, A* will always find the shortest path. It works best for simple environments, such as the basic path planning in our tasks.
 
 - **Dijkstra**
 
-Dijkstra’s is a straightforward algorithm for finding the shortest path in environments with non-negative costs. It starts by setting the start node’s cost to 0 and all other nodes’ costs to infinity. It then repeatedly picks the node with the lowest current cost, updates the cost of its neighbors (adding the cost of moving between them), and keeps going until it reaches the goal. It doesn’t use any guesses—just explores all nodes in order of increasing cost. This guarantees the shortest path but can be slow for large spaces, as it checks irrelevant nodes too. It’s good for small, weighted graphs (e.g., simple network routing).
+Dijkstra’s is a straightforward algorithm. It finds the shortest path in areas. First, Dijkstra sets the start node’s cost to 0. All other nodes start with an infinite cost. Then it keeps picking the node with the lowest current cost. Also, it updates the cost of the nearby nodes. It constantly does this until it reaches the goal. Dijkstra doesn’t use any guesses. It just checks all nodes in order of increasing cost. This guarantees the shortest path, but it could be slow for large spaces, since it checks irrelevant nodes too. In summary, it is  good for small and weighted graphs.
 
 - **RRT**
 
-RRT is a probabilistic algorithm designed for complex, high-dimensional environments (e.g., robot arms or drones in 3D space) where grid-based algorithms struggle. It builds a "random tree" to explore the space: it randomly picks a point, finds the closest node in the existing tree, and connects them if the path is obstacle-free. It might prioritize points near the goal to speed up finding a path. RRT doesn’t guarantee the shortest path but is great for unstructured or hard-to-map spaces (e.g., UAV trajectory planning in cluttered areas).
+RRT is a probabilistic algorithm. It uses randomness to find out paths. It is designed for complex environments. Usually, algorithms that are based on grids struggle in those environments. However, RRT builds a "random tree" to explore the space. It randomly picks a point, then finds the closest node in the existing tree, and connects them if the path is without obstacles. Sometimes, it prioritizes points near the goal to speed up pathfinding. RRT doesn’t guarantee the shortest path, but it is great for irregular spaces. For example, planning a drone’s flight path may need RRT.
 
 ---
 ### Performance （under task 1 scenario)
