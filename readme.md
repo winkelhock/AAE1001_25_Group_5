@@ -288,8 +288,59 @@ _(An image showing final code analysis results, VS Code, Author's own)_
 ## 5. Task 3
 <a href="task3.py"><strong>Task 3 Code</strong></a>
 #### Introduction
+
+This task requires us to design a new passenger aircraft that minimizes the total weekly operating cost for Scenario 1 (3,300 passengers per week, maximum 13 flights per week, fuel price $0.85/kg, medium time-related cost). Only the cruise phase (T_best) is considered. The aircraft must obey a strict set of technical, regulatory, and economic rules that deliberately replicate real-world airline constraints and historical aviation practices. By systematically testing all feasible configurations, we identify the single most cost-effective design and name it under the name "HK Five55", which represents our group.
+
 #### Scenarios
+
+300-seat scenario:
+A 300-seat aircraft is the smallest design that satisfies the 13-flight-per-week limit, requiring 11 flights to carry all 3,300 passengers (3,300 ÷ 300 = 11 exactly). Because it reaches the 300-seat threshold, it must be configured with four engines, incurring a fuel burn of 80 kg/min and a fixed cost of $2,500 per flight. Its time-related cost C_T is $20/min (12 + 2×4). Although it has the lowest variable rate among the four candidates ($88/min), the high number of flights (11) means the fixed cost is applied 11 times and the variable cost is charged for 11 × T_best minutes. This results in the highest weekly total of approximately $607,200 (at T_best = 600 min).
+
+350-seat scenario:
+Moving up to 350 seats reduces the required flights to 10 (3,300 ÷ 350 ≈ 9.43 → 10). The aircraft remains four-engine (ΔF = 80 kg/min), but C_T rises to $22/min because of one additional 50-seat block. The variable rate therefore increases to $90/min. Despite the higher per-minute cost, the saving of one entire flight eliminates one application of the $2,500 fixed cost and reduces total cruise minutes by T_best, yielding a clear cost reduction to around $564,000 — a saving of about $43,000 per week compared to the 300-seat design.
+
+400-seat scenario:
+With 400 seats, only 9 flights are needed (3,300 ÷ 400 = 8.25 → 9). The engine count and fuel burn remain identical to the previous two designs (four engines, 80 kg/min), but C_T climbs to $24/min, pushing the variable rate to $92/min. The further reduction from 10 to 9 flights again removes another $2,500 fixed cost and another full T_best of variable cost. The net effect is a further drop in weekly operating cost to approximately $523,800, demonstrating that the benefit of fewer flights continues to outweigh the rising per-minute charges.
+
+450-seat scenario (optimal):
+The 450-seat configuration is the largest permitted design and requires only 8 flights per week (3,300 ÷ 450 = 7.33 → 8). It still uses four engines and therefore the same 80 kg/min fuel burn, but C_T reaches the maximum of $26/min, giving the highest variable rate of $94/min. Nevertheless, operating just 8 flights instead of 11 (300-seat case) eliminates three complete applications of the $2,500 fixed cost and three full cruise segments of variable cost. These savings dominate the higher per-minute rate, delivering the lowest weekly total of $471,200 — approximately $136,000 cheaper per week than the 300-seat option and $52,600 cheaper than the 400-seat option. This confirms that, under a strict flight-frequency cap, economies of scale strongly favour the largest feasible aircraft.
+
 #### Calculation
+
+The total weekly operating cost is calculated using the formula C = N_flights × (C_F × ΔF × T_best + C_T × T_best + C_c). For any given seat count, the number of flights required is obtained by rounding up the ratio of 3,300 passengers to the aircraft capacity (N_flights = ⌈3300/seats⌉). Aircraft with 300 or more seats are assigned four engines (otherwise two), giving a fuel burn rate ΔF of 80 kg/min or 40 kg/min respectively at the fixed cruise consumption of 20 kg/min per engine. The time-related cost C_T starts at a base of $12/min and increases by $2 for every additional 50 passengers above 100 seats, yielding C_T values from $20/min (300 seats) to $26/min (450 seats). Adding the fuel cost component (0.85 × ΔF) to C_T produces the variable cost per minute, which is multiplied by the cruise duration T_best and then added to the fixed cost per flight ($2,000 for twin-engine, $2,500 for four-engine designs). The resulting per-flight cost is finally multiplied by the number of weekly flights. When this process is repeated for the four feasible capacities (300, 350, 400, and 450 seats), the 450-seat configuration consistently delivers the lowest total weekly cost — in the example of a 600-minute cruise, $471,200 — because the savings from operating only eight flights instead of eleven more than offset the higher per-minute variable rate and fixed cost associated with the largest four-engine aircraft. The following table shows the final costs of all scenarios.
+<img width="1196" height="620" alt="image" src="https://github.com/user-attachments/assets/6a937bc3-c65b-4a67-94ac-c3602ea4a586" />
+<img width="1600" height="1122" alt="image" src="https://github.com/user-attachments/assets/fad2863c-418d-42e1-b0f2-ef0974263489" />
+
+#### Bonus - Explaining the Rules and Restrictions
+
+Rule 1: Passenger Capacity
+Requirement: 100-450 seats, steps of 50
+Real-world Reason/ Evidence: Covers narrow-body (≈100–200) to large wide-body (≈350–450) classes (A320 to A350/B777)
+
+Rule 2: C_T scaling
+Requirement: Base $12/min; +$2/min for every additional 50 seats above 100
+Real-world Reason/ Evidence: Larger/heavier aircraft have higher crew cost, maintenance, depreciation, insurance, and cabin crew requirements per minute flown. Industry data show non-fuel cost per block minute rises almost linearly with size.
+
+Rule 3: Must use 4 engines if seats >=300
+Requirement: Mandatory switch at 300 seats
+Real-world Reason/Evidence: Reflects historical ETOPS conservatism. Until the late 2000s, many regulators and airlines required four engines for very long over-water routes (e.g., South Pacific, polar). Although modern twins (B777, A350) are fully capable, the rule simulates a conservative authority or an ultra-long route where four engines are still mandated.
+
+Rule 4: Fixed cost C_c
+Requirement: $2,000 (twin-engine) vs $2,500 (4-engine)
+Real-world Reason/Evidence: Four-engine aircraft have higher engine maintenance reserves, higher landing fees (due to higher MTOW), and more complex systems. Real B747 vs B777 data show ≈20–30 % higher trip cost for quads.
+
+Rule 5: Engine fuel burn
+Requirement: 20 kg/min per engine in cruise
+Real-world Reason/Evidence: Simplified but realistic future high-bypass turbofan cruise burn (≈1.2 t/h per engine). Keeps calculations manageable.
+
+Rule 6: Maximum 13 flights/week
+Requirement: Limit to no more than 13 flights per week
+Real-world Reason/Evidence: Represents slot constraints (e.g., London–Singapore) or aircraft utilization limits on ultra-long-haul routes (13 flights/week ≈ 1.85 daily turns).
+
+Rule 7: Only cruise time counted
+Requirement: Use T_best only
+Real-world Reason/Evidence: On long-haul flights, cruise is 80–90 % of block time and dominates cost differences between designs.
+
 
 ## 6. Additional Task 1
 <a href="taska1.py"><strong>Task A1 Code</strong></a>
