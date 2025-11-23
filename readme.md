@@ -318,8 +318,8 @@ Requirement: 100-450 seats, steps of 50
 Real-world Reason/ Evidence: Covers narrow-body (≈100–200) to large wide-body (≈350–450) classes (A320 to A350/B777)
 
 Rule 2: C_T scaling
-Requirement: Base $12/min; +$2/min for every additional 50 seats above 100
-Real-world Reason/ Evidence: Larger/heavier aircraft have higher crew cost, maintenance, depreciation, insurance, and cabin crew requirements per minute flown. Industry data show non-fuel cost per block minute rises almost linearly with size.
+#Requirement: Base $12/min; +$2/min for every additional 50 seats above 100
+#Real-world Reason/ Evidence: Larger/heavier aircraft have higher crew cost, maintenance, depreciation, insurance, and cabin crew requirements per minute flown. Industry data show non-fuel cost per block minute rises almost linearly with size.
 
 Rule 3: Must use 4 engines if seats >=300
 Requirement: Mandatory switch at 300 seats
