@@ -464,7 +464,7 @@ RRT does not guarantee an optimal path. The random spots usually make the route 
 |--------------------|-----------------------------------------------------------------------|---------------------------------------------------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------------|
 | **A\***            | - Cost function:  f(n) = g(n) + h(n)<br>- Nodes expansion with the lowest f(n) value | - Finds the shortest path if the heuristic is admissible | - Heuristic-dependent<br>- High memory usage for large graphs | - High efficiency with heuristic guidance        |
 | **Dijkstra**       | - Cost function: g(n)<br>- Nodes expansion with the lowest g(n) values<br>- Uniform-cost search to ensure optimality | - Ensures completeness<br>- Guarantees optimality | - Low efficiency<br>- Requires lots of memory for large graphs    | - Explores all nodes up to the goal  |
-| **RRT**            | - Grows a tree by randomly sampling and connecting  | - Able to handles complex obstacles | - Path is irregular and longer<br>- Variable as different path each run<br>- Cost zones handled roughly | - Path quality improves with more iterations |
+| **RRT**            | - Grows a tree by randomly sampling and connecting  | - Able to handles complex obstacles | - Path is irregular and longer<br>- Variable as different path each run<br>- Cost zones handled roughly | - Path quality improves with more iterations<br>- Random → Each run give a different path|
 
 <!-- Group Reflections -->
 ## 9. Group Reflections
