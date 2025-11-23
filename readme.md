@@ -483,6 +483,7 @@ Before this project, I had absolutely no programming background and even felt ov
 Manny, So Yee Man (25079801D)
 
 Talia, Cheung Yung Ting Talia (25129573D)
+
 This project has gave me a glance at how flight planning works in the aviation industry, I find it most interesting is that flight planning requires check points in order to make flights safer and easier to plan. I've seen how artifical intelligent can help us human who's working for flight planning and aircraft designing through using code to summarise and calcuate datas all in one code. However, as my teammates and I have encountered countless of errors even with the AI generating the codes, we've learn the importance of verifying the codes with the data output by seeing if the numbers make sense when we input different datas. Using AI could also help me understand more about how coding works, such as learning about functions.
 
 Sharon, Chan Chin Ying (25084065D)
