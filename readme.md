@@ -313,11 +313,13 @@ The total weekly operating cost is calculated using the formula C = N_flights ×
 
 #### Bonus - Explaining the Rules and Restrictions
 
+
 Rule 1: Passenger Capacity
 
 Requirement: 100-450 seats, steps of 50
 
 Real-world Reason/ Evidence: Covers narrow-body (≈100–200) to large wide-body (≈350–450) classes (A320 to A350/B777)
+
 
 Rule 2: C_T scaling
 
@@ -325,24 +327,39 @@ Requirement: Base $12/min; +$2/min for every additional 50 seats above 100
 
 Real-world Reason/ Evidence: Larger/heavier aircraft have higher crew cost, maintenance, depreciation, insurance, and cabin crew requirements per minute flown. Industry data show non-fuel cost per block minute rises almost linearly with size.
 
+
 Rule 3: Must use 4 engines if seats >=300
+
 Requirement: Mandatory switch at 300 seats
+
 Real-world Reason/Evidence: Reflects historical ETOPS conservatism. Until the late 2000s, many regulators and airlines required four engines for very long over-water routes (e.g., South Pacific, polar). Although modern twins (B777, A350) are fully capable, the rule simulates a conservative authority or an ultra-long route where four engines are still mandated.
 
+
 Rule 4: Fixed cost C_c
+
 Requirement: $2,000 (twin-engine) vs $2,500 (4-engine)
+
 Real-world Reason/Evidence: Four-engine aircraft have higher engine maintenance reserves, higher landing fees (due to higher MTOW), and more complex systems. Real B747 vs B777 data show ≈20–30 % higher trip cost for quads.
 
+
 Rule 5: Engine fuel burn
+
 Requirement: 20 kg/min per engine in cruise
+
 Real-world Reason/Evidence: Simplified but realistic future high-bypass turbofan cruise burn (≈1.2 t/h per engine). Keeps calculations manageable.
 
+
 Rule 6: Maximum 13 flights/week
+
 Requirement: Limit to no more than 13 flights per week
+
 Real-world Reason/Evidence: Represents slot constraints (e.g., London–Singapore) or aircraft utilization limits on ultra-long-haul routes (13 flights/week ≈ 1.85 daily turns).
 
+
 Rule 7: Only cruise time counted
+
 Requirement: Use T_best only
+
 Real-world Reason/Evidence: On long-haul flights, cruise is 80–90 % of block time and dominates cost differences between designs.
 
 
