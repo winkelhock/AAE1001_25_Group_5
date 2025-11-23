@@ -73,7 +73,7 @@ winner = min(results, key=lambda x: x['total_cost'])
 print("\n" + "="*50)
 print("OPTIMAL DESIGN (LOWEST COST)")
 print("="*50)
-print(f"Aircraft Name     : HK Five55-{winner['seats']}")
+print(f"Aircraft Name     : HK Five55
 print(f"Passenger Capacity: {winner['seats']} seats")
 print(f"Engine Count      : {winner['engines']} engines")
 print(f"Flights needed    : {winner['flights']} per week")
