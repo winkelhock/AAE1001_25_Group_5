@@ -384,10 +384,15 @@ In reality, the flight path is not fixed for every single flight every time. It 
 There are five major objectives in this task:  Only the fuel-consuming area remains and generate it randomly with a fixed area (40x40); Diagonal movement is disabled, change parameter(s) so that the object could travel within one grid size; Obstacles are generated randomly with reasonable density; Destination and starting points are generated randomly with at least a 40-unit distance in-between; Plotting of the fuel-consuming area would not cover the obstacles, and obstacles should not generate at/near the start and end point.
 
 #### Meeting the requirements
+
 ![Objective1](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151129.png)
+
 ![Objective2](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151333.png)
+
 ![Objective3](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151446.png)
+
 ![Objective4](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151559.png)
+
 ![Objective5](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151941.png)
 
 #### Results with modified code
