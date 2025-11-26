@@ -423,7 +423,7 @@ The implementation ensures that start and end points are randomly generated with
 
 ![Objective5](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151941.png)
 
-The code includes filtering mechanisms to ensure proper visualization and obstacle placement. Obstacles are systematically removed from the fuel-consuming area, preventing visual overlap. Furthermore, obstacles within a 3-unit radius of both start and end points are filtered out to ensure navigable space around critical positions. The fuel-consuming area is plotted with transparent yellow coloring using alpha=0.3, allowing underlying grid lines and other elements to remain visible while clearly distinguishing the special cost region from both obstacles and the clear path areas.
+The code includes filtering mechanisms to ensure proper visualization and obstacle placement. Obstacles are removed from the fuel-consuming area, preventing visual overlap. Furthermore, obstacles within a 3-unit radius of both start and end points are filtered out to ensure navigable space around critical positions. The fuel-consuming area is plotted with transparent yellow coloring using alpha=0.3, allowing underlying grid lines and other elements to remain visible while clearly distinguishing the special cost region from both obstacles and the clear path areas.
 
 #### Results with modified code
 ![Results](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/6c48bf2a-591d-4ce9-ac16-54f90aa4355e.jpeg)
@@ -573,3 +573,4 @@ In this group project, I learned how to use AI effectively to help me in complet
 <!-- Presentation Files -->
 ## 10. Presentation Files
 
+[Files in Canva](https://www.canva.com/design/DAG3wDGFCrQ/P2vQRtzet--O7I78hflwdA/edit?utm_content=DAG3wDGFCrQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
