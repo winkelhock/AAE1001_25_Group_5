@@ -386,14 +386,19 @@ There are five major objectives in this task:  Only the fuel-consuming area rema
 #### Meeting the requirements
 
 ![Objective1](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151129.png)
+From the quoted code, a fuel-consuming area with a fixed 40x40 dimension is randomly generated. The area is created by selecting a random starting point (fc_start_x, fc_start_y) between coordinates 10-20, then generating a 40x40 grid from that starting position. All grid cells within this area are stored in fc_x and fc_y, ensuring the area maintains exactly 40×40 in size as required. The yellow visualization displays this region on the plot without overlapping the obstacle representation.
 
 ![Objective2](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151333.png)
+The movement model has been configured to exclude diagonal paths by implementing only four directional movements. The motion model includes only horizontal and vertical movements: [1, 0, 1] (right), [0, 1, 1] (up), [-1, 0, 1] (left), and [0, -1, 1] (down). Each movement has 1 grid unit, ensuring the object travels within one grid size per step as specified in the requirements, completely eliminating any diagonal path possibilities.
 
 ![Objective3](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151446.png)
+The code implements a sophisticated obstacle generation system with controlled density set at 0.15 (15% coverage). This density strikes an appropriate balance between creating a challenging pathfinding environment while maintaining solvability. Obstacles are randomly distributed across the entire map area using uniform distribution, and the count is mathematically calculated based on the total map area multiplied by the density factor. This ensures obstacles are neither too sparse nor too dense, providing a realistic testing scenario for the pathfinding algorithm.
 
 ![Objective4](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151559.png)
+The implementation ensures that start and end points are randomly generated with a minimum separation of 40 units through a robust validation loop. The code continuously generates random candidate positions until it finds a start-goal pair that satisfies the distance requirement using Euclidean distance calculation math.hypot(gx - sx, gy - sy) < 40. Additionally, the validation includes checks to ensure neither point falls within the fuel-consuming area, providing comprehensive position validation before proceeding with path planning.
 
 ![Objective5](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/Screenshot%202025-11-17%20151941.png)
+The code includes sophisticated filtering mechanisms to ensure proper visualization and obstacle placement. Obstacles are systematically removed from the fuel-consuming area through coordinate comparison, preventing visual overlap. Furthermore, obstacles within a 3-unit radius of both start and end points are filtered out to ensure navigable space around critical positions. The fuel-consuming area is plotted with semi-transparent yellow coloring using alpha=0.3, allowing underlying grid lines and other elements to remain visible while clearly distinguishing the special cost region from both obstacles and the clear path areas.
 
 #### Results with modified code
 ![Results](https://raw.githubusercontent.com/winkelhock/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/6c48bf2a-591d-4ce9-ac16-54f90aa4355e.jpeg)
