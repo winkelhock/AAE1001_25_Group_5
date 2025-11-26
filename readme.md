@@ -305,6 +305,8 @@ We were also able to compile the bonus code to find the best aircraft based on s
 
 _(An image showing final code analysis results, VS Code, Author's own)_
 
+Through the help of GenAI, we were able to correct our coding procedures, ensuring cleaner outputs and more efficient prompt methods to go about the task, generating optimum results.
+
 ## 5. Task 3
 <a href="task3.py"><strong>Task 3 Code</strong></a>
 #### Introduction
