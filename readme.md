@@ -42,17 +42,37 @@
 <!-- Group Members and Roles -->
 ## 1. Group Members and Roles
 1. Winkelhock, Yau Yue Hong Winkelhock (25034703D)
+
+Roles: GitHub Repository and Readme, Task A2
+
 2. Rodgers, Rodgers Mawalla Maighacho (25094994D)
+
+Roles: Task 2
+
 3. Manny, So Yee Man (25079801D)
+
+Roles: Task 1
+
 4. August, Wang Tiancheng (25095793D)
+
+Roles: Task A3
+
 5. Talia, Cheung Yung Ting Talia (25129573D)
+
+Roles: Task A1
+
 6. Sharon, Chan Chin Ying (25084065D)
+
+Roles: Task 3
+
 7. Sylvia, Lau Tsz Wing (25068927D)
+
+Roles: Task A3
 
 <!-- Introduction -->
 ## 2. Introduction
-### Task Path
-### Path Planning
+
+A total of 3 tasks, and 3 additional tasks are assigned. Our group will use Python, assisted with GenAI to generate an optimized path for the flight, as shown in the following tasks with sufficent description.
 
 ## 3. Task 1
 ### Description
