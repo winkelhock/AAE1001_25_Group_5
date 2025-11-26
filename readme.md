@@ -387,6 +387,7 @@ There are five major objectives in this task:  Only the fuel-consuming area rema
 
 
 #### Results with modified code
+![Results](/AAE1001_25_Group_5/refs/heads/Yau-Yue-Hong-Winkelhock/6c48bf2a-591d-4ce9-ac16-54f90aa4355e.jpeg)
 
 ## 8. Additional Task 3
 <a href="task a3/A star task a3.py"><strong>Task A3 Astar Code</strong></a>
