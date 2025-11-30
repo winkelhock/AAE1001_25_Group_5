@@ -393,8 +393,17 @@ This task is required modify the code in order to add two check points in each c
 
 ### What was modified in the code?
 The code from Task 1 was used to keep the template of our map with the specific cost intensive areas and obstacles. First, to add the check points on each cost intensive area, defining the coordinates of the check points is required before initialize the A Star Planner.
+![2D14D91D-D2E8-423E-A0CC-261F21D536E1_4_5005_c](https://github.com/user-attachments/assets/3e646095-fb44-49bf-8e77-54563a70851e)
+<img width="1252" height="978" alt="17204E68-498A-4DE3-B697-0A17D63679C3" src="https://github.com/user-attachments/assets/f874c39f-8d9b-4749-8213-e6a4e7910569" />
 
-After that, we can use the A Star Planner to find the optimal route from start to check point 1, from check point 1 to check point 2, from check point 2 to final destination. These separate routes will then be added up together into one route from start to the final destination. The cost (in minutes) of these three segments will also be summed up to find the "Total path time (Tbest) across all segments", this will be printed on the top of the animation and in the output. 
+
+After that, we can use the A Star Planner to find the optimal route from start to check point 1, from check point 1 to check point 2, from check point 2 to final destination. These separate routes will then be added up together into one route from start to the final destination. 
+![F2697606-E447-4308-8FEC-54EA9FC00538_4_5005_c](https://github.com/user-attachments/assets/c5690280-dd1c-47ec-9c17-5c380c02a1dd)
+<img width="1570" height="694" alt="BC354054-8324-4282-8594-DB71F9721EF1" src="https://github.com/user-attachments/assets/1ed9e4bf-9aa6-4185-a23e-12bd26c9cd0b" />
+
+The cost (in minutes) of these three segments will also be summed up to find the "Total path time (Tbest) across all segments", this will be printed on the top of the animation and in the output. 
+<img width="1812" height="222" alt="9525B13F-FAB8-4201-BE23-A42E08275C3F" src="https://github.com/user-attachments/assets/6633f543-dc78-4ea0-954a-68f76857bcfa" /> <img width="1110" height="406" alt="F134C91E-AAC5-4F04-BDBB-97EF4815E253" src="https://github.com/user-attachments/assets/36121526-06f8-4b3e-a2db-01eef9e3d802" />
+
 
 A feature of the program is that the check points could be changed in line 281 and 283 where the coordinates of the check points are defined. Sensible results showing that the further the check points, the longer(Tbest) it takes for the route. 
 
